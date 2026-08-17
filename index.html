@@ -1,10 +1,60 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex"><title>Medine · Demos</title>
-<style>body{font-family:system-ui,sans-serif;background:#0e2743;color:#eaf6fc;display:grid;
-place-items:center;min-height:100vh;margin:0}a{color:#7fc4e6}.c{text-align:center;padding:30px}
-h1{font-weight:600;letter-spacing:1px}li{list-style:none;margin:10px 0;font-size:18px}</style></head>
-<body><div class="c"><h1>MEDINE · Demos</h1><ul>
-<li><a href="./adara-spa/">Adara Spa →</a></li>
-<li><a href="./mafer-cosmetologa/">Mafer Cosmetóloga →</a></li>
-</ul></div></body></html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Medine · Demos</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+    background:radial-gradient(120% 90% at 50% -10%,#123a5c,#0a1b2e 60%);
+    color:#eaf6fc;display:grid;place-items:center;min-height:100vh;padding:24px}
+  .card{width:100%;max-width:380px;background:rgba(255,255,255,.05);
+    border:1px solid rgba(127,196,230,.25);border-radius:20px;padding:34px 28px;text-align:center;
+    box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+  h1{font-size:22px;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+  .sub{font-size:13px;color:#7fc4e6;margin-bottom:24px}
+  input{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(127,196,230,.3);
+    background:rgba(255,255,255,.06);color:#fff;font-size:16px;text-align:center;letter-spacing:4px;outline:none}
+  input:focus{border-color:#7fc4e6}
+  button{width:100%;margin-top:12px;padding:14px;border:0;border-radius:12px;cursor:pointer;
+    background:#2f9fc0;color:#fff;font-size:15px;font-weight:600;letter-spacing:.5px;transition:.2s}
+  button:hover{background:#3ab3d6}
+  .err{color:#ff9db0;font-size:13px;margin-top:12px;min-height:18px}
+  #list{display:none;margin-top:10px;text-align:left}
+  #list a{display:block;padding:14px 16px;margin-top:10px;border-radius:12px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(127,196,230,.2);color:#eaf6fc;
+    text-decoration:none;font-size:16px;transition:.2s}
+  #list a:hover{background:rgba(127,196,230,.15);transform:translateX(3px)}
+  #list a span{float:right;color:#7fc4e6}
+  .foot{margin-top:22px;font-size:11px;color:rgba(127,196,230,.6)}
+</style></head>
+<body>
+<div class="card">
+  <h1>MEDINE</h1>
+  <div class="sub">Demos · acceso privado</div>
+  <div id="gate">
+    <input id="pw" type="password" inputmode="numeric" maxlength="8" placeholder="Contraseña" autocomplete="off" aria-label="Contraseña">
+    <button id="go">Entrar</button>
+    <div class="err" id="err"></div>
+  </div>
+  <div id="list"></div>
+  <div class="foot">medine.tech</div>
+</div>
+<script>
+  const KEY="8888";
+  const DATA="W3sibiI6IkFkYXJhIFNwYSIsInUiOiJhZGFyYS1zcGEvIn0seyJuIjoiTWFmZXIgQ29zbWV0b2xvZ2EiLCJ1IjoibWFmZXItY29zbWV0b2xvZ2EvIn1d";
+  const pw=document.getElementById('pw'), go=document.getElementById('go'),
+        err=document.getElementById('err'), gate=document.getElementById('gate'),
+        list=document.getElementById('list');
+  function enter(){
+    if(pw.value===KEY){
+      const items=JSON.parse(atob(DATA));
+      list.innerHTML=items.map(x=>'<a href="./'+x.u+'">'+x.n+'<span>→</span></a>').join('');
+      gate.style.display='none'; list.style.display='block';
+    } else { err.textContent="Contraseña incorrecta"; pw.value=""; pw.focus(); }
+  }
+  go.onclick=enter;
+  pw.addEventListener('keydown',e=>{if(e.key==='Enter')enter();});
+  pw.focus();
+</script>
+</body></html>
