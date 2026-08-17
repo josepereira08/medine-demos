@@ -6,8 +6,9 @@
 <meta name="robots" content="noindex">
 <title>Adara Spa · Estética, Masaje y Depilación Láser · Carúpano</title>
 <meta property="og:title" content="Adara Spa · Carúpano">
-<meta property="og:description" content="Estética, masaje y depilación láser. Tu momento para ti, en el corazón de Carúpano.">
+<meta property="og:description" content="Estética, masaje, depilación láser y diseño de cejas en C.C. El Cristal, Carúpano.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="./assets/adara-logo.png">
 <link rel="icon" href="./assets/adara-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,23 +34,23 @@
     font-weight:500}
   .rule{height:1px;background:var(--line);border:0}
 
-  /* ── NAV ── */
   nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:60;
     display:flex;align-items:center;gap:18px;
     background:rgba(253,241,245,.85);backdrop-filter:blur(12px);
-    border:1px solid var(--line);border-radius:999px;padding:8px 10px 8px 14px;
+    border:1px solid var(--line);border-radius:999px;padding:7px 10px 7px 12px;
     box-shadow:0 10px 34px -18px rgba(61,19,41,.5)}
   nav .brand{display:flex;align-items:center}
-  nav .brand img{height:40px;display:block}
+  nav .brand img{height:42px;width:42px;border-radius:50%;object-fit:cover;display:block;
+    box-shadow:0 2px 10px -3px rgba(120,6,66,.4)}
   nav .links{display:none;gap:22px;font-size:13px;letter-spacing:.06em;color:var(--soft)}
   nav .links a:hover{color:var(--ink)}
   nav .cta{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
     background:var(--wine);color:#fff;padding:9px 16px;border-radius:999px;
     font-weight:400;transition:background .25s}
   nav .cta:hover{background:var(--wine-deep)}
-  @media(min-width:900px){nav .links{display:flex}nav{gap:22px;padding-left:18px}}
+  @media(min-width:960px){nav .links{display:flex}nav{gap:22px;padding-left:18px}}
 
-  /* ── HERO ── */
+  /* HERO */
   header{position:relative;padding:118px 0 40px;overflow:hidden}
   header::before{content:"";position:absolute;inset:0;z-index:-1;
     background:radial-gradient(70% 55% at 85% 20%,rgba(23,174,183,.14),transparent 60%),
@@ -66,50 +67,66 @@
     border:1px solid var(--line);border-radius:999px;padding:8px 15px;color:var(--soft)}
   .hero .actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:10px}
   .btn{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;letter-spacing:.05em;
-    padding:15px 26px;border-radius:999px;font-weight:400;transition:.25s}
+    padding:15px 26px;border-radius:999px;font-weight:400;transition:.25s;cursor:pointer}
   .btn-solid{background:var(--wine);color:#fff}
   .btn-solid:hover{background:var(--wine-deep)}
-  .btn-line{border:1px solid var(--ink);color:var(--ink)}
+  .btn-line{border:1px solid var(--ink);color:var(--ink);background:none}
   .btn-line:hover{background:var(--ink);color:var(--blush)}
   .hero-meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:26px;
     padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
   .hero-meta b{font-weight:500;color:var(--ink);display:block;font-family:var(--serif);
     font-size:16px;letter-spacing:.01em}
 
-  /* logo halo */
-  .orb-wrap{position:relative;justify-self:center;width:min(84vw,420px);aspect-ratio:1;
+  .orb-wrap{position:relative;justify-self:center;width:min(84vw,410px);aspect-ratio:1;
     display:grid;place-items:center}
   .halo{position:absolute;inset:0;border-radius:50%;
     background:radial-gradient(circle at 50% 46%,#fff,var(--blush) 46%,transparent 72%)}
-  .ring{position:absolute;inset:6%;border-radius:50%;
+  .ring{position:absolute;inset:4%;border-radius:50%;
     background:conic-gradient(from 210deg,var(--teal),var(--celeste),#ffffff,
       var(--wine),var(--wine-deep),var(--purple),var(--teal));
-    -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 8px),#000 calc(100% - 7px));
-    mask:radial-gradient(farthest-side,transparent calc(100% - 8px),#000 calc(100% - 7px));
-    animation:spin 26s linear infinite;opacity:.85}
-  .orb-logo{position:relative;width:74%;filter:drop-shadow(0 22px 40px rgba(120,6,66,.28));
-    animation:float 7s ease-in-out infinite;border-radius:20px}
+    -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 9px),#000 calc(100% - 8px));
+    mask:radial-gradient(farthest-side,transparent calc(100% - 9px),#000 calc(100% - 8px));
+    animation:spin 26s linear infinite;opacity:.9}
+  .orb-logo{position:relative;width:70%;border-radius:50%;
+    box-shadow:0 22px 44px rgba(120,6,66,.3);animation:float 7s ease-in-out infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
   @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
   @media(min-width:820px){
     .hero{grid-template-columns:1.12fr .88fr;align-items:center;gap:20px}
-    header{padding:150px 0 70px}
+    header{padding:150px 0 60px}
     .hero-text{position:relative;padding-left:42px}
     .hero-vlabel{display:block;position:absolute;left:0;top:8px;writing-mode:vertical-rl;
       transform:rotate(180deg);font-size:11px;letter-spacing:.34em;text-transform:uppercase;
       color:var(--wine)}
   }
 
-  /* botanical divider */
-  .bota{display:block;margin:8px auto;width:74px;height:auto;color:var(--teal)}
-  .bota path{fill:none;stroke:currentColor;stroke-width:1.4;
-    stroke-dasharray:240;stroke-dashoffset:240;transition:stroke-dashoffset 1.6s ease}
-  .bota.in path{stroke-dashoffset:0}
+  /* PROMOCIONES carousel */
+  .promos{padding:26px 0 8px}
+  .promos .lead-c{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .promos h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,6vw,40px)}
+  .carousel{position:relative;max-width:1180px;margin:0 auto;width:calc(100% - 44px);
+    height:clamp(420px,80vw,520px);border-radius:22px;overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(120,6,66,.45);background:var(--band)}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:grid;place-items:center}
+  .slide.active{opacity:1}
+  .slide .bg{position:absolute;inset:0;background-size:cover;background-position:center;
+    filter:blur(26px) brightness(.6);transform:scale(1.15)}
+  .slide img{position:relative;max-height:92%;max-width:90%;border-radius:12px;
+    box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .c-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:44px;height:44px;
+    border-radius:50%;border:0;background:rgba(253,241,245,.9);color:var(--band);
+    font-size:20px;cursor:pointer;display:grid;place-items:center;transition:.2s}
+  .c-btn:hover{background:#fff}
+  .c-prev{left:14px}.c-next{right:14px}
+  .dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);z-index:4;
+    display:flex;gap:8px}
+  .dot{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer;transition:.25s}
+  .dot.on{background:#fff;width:26px;border-radius:6px}
 
-  /* ── SECTION shell ── */
-  section{padding:66px 0;position:relative}
-  .shead{display:flex;align-items:baseline;gap:16px;margin-bottom:34px}
+  /* SECTION shell */
+  section{padding:60px 0;position:relative}
+  .shead{display:flex;align-items:baseline;gap:16px;margin-bottom:32px}
   .shead h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,7vw,52px);
     line-height:1;letter-spacing:-.01em}
   .shead .snum{transform:translateY(-4px)}
@@ -117,86 +134,33 @@
   /* servicios */
   .svc-list{border-top:1px solid var(--line)}
   .svc-row{display:grid;grid-template-columns:1fr;gap:6px 24px;
-    padding:24px 4px;border-bottom:1px solid var(--line);align-items:start;
-    transition:background .3s}
+    padding:22px 4px;border-bottom:1px solid var(--line);align-items:start;transition:background .3s}
   .svc-row:hover{background:var(--paper)}
   .svc-row .k{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--teal)}
-  .svc-row h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,5vw,32px);
+  .svc-row h3{font-family:var(--serif);font-weight:400;font-size:clamp(22px,5vw,30px);
     line-height:1.05;margin-bottom:8px}
   .svc-row p{font-size:14.5px;color:var(--soft);max-width:52ch}
   .svc-row .tags{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
   .svc-row .tags span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;
     color:var(--wine);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
-  @media(min-width:760px){.svc-row{grid-template-columns:64px 1.1fr 1fr;align-items:center}}
+  @media(min-width:760px){.svc-row{grid-template-columns:64px 1.05fr 1fr;align-items:center}}
 
-  /* paquetes band */
-  .band{background:linear-gradient(150deg,var(--band),var(--band-2));color:#f7e3ee}
-  .band .shead h2{color:#fff}
-  .band .snum,.band .eyebrow{color:#f0b8d4}
-  .pk{display:grid;gap:18px}
-  .pk-card{border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:26px 24px;
-    background:rgba(255,255,255,.05);transition:.3s;position:relative;overflow:hidden}
-  .pk-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
-    background:linear-gradient(var(--teal),var(--celeste))}
-  .pk-card:hover{background:rgba(255,255,255,.09);transform:translateY(-3px)}
-  .pk-card .k{font-family:var(--serif);font-style:italic;color:#f0b8d4;font-size:15px}
-  .pk-card h3{font-family:var(--serif);font-weight:400;font-size:26px;margin:6px 0 10px}
-  .pk-card p{font-size:14px;color:rgba(247,227,238,.78);line-height:1.55}
-  .pk-card .go{margin-top:16px;display:inline-flex;gap:8px;font-size:12.5px;
-    letter-spacing:.1em;text-transform:uppercase;color:#8fe0e6}
-  @media(min-width:760px){.pk{grid-template-columns:repeat(3,1fr)}}
+  /* lo más pedido (productos) */
+  .prod{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .pcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+  .pcard:hover{transform:translateY(-4px);box-shadow:0 22px 40px -22px rgba(120,6,66,.4)}
+  .pcard .ph{aspect-ratio:4/3;overflow:hidden}
+  .pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .pcard:hover .ph img{transform:scale(1.07)}
+  .pcard .pb{padding:16px 16px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .pcard h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.1}
+  .pcard p{font-size:12.5px;color:var(--soft);flex:1}
+  .pcard a{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--wine);
+    display:inline-flex;gap:6px;margin-top:4px}
+  @media(min-width:820px){.prod{grid-template-columns:repeat(3,1fr);gap:20px}}
 
-  /* resultados */
-  .res{display:grid;gap:30px;align-items:center}
-  .res .big{font-family:var(--serif);font-weight:300;font-size:clamp(26px,6vw,40px);
-    line-height:1.16;letter-spacing:-.01em}
-  .res .big em{font-style:italic;color:var(--wine)}
-  .res .card{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--paper)}
-  .res .card .num{font-family:var(--serif);font-size:46px;line-height:1}
-  .res .card .num.a{color:var(--wine)}
-  .res .card .num.b{color:var(--teal)}
-  .res .card p{font-size:14px;color:var(--soft);margin-top:6px}
-  .res .igbtn{margin-top:20px}
-  @media(min-width:820px){.res{grid-template-columns:1.3fr .7fr;gap:50px}}
-
-  /* visitanos */
-  .visit{display:grid;gap:24px}
-  .visit .info div{padding:18px 0;border-bottom:1px solid var(--line)}
-  .visit .info .lab{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--wine)}
-  .visit .info .val{font-family:var(--serif);font-size:20px;margin-top:5px}
-  .visit .map{border-radius:18px;min-height:230px;position:relative;overflow:hidden;
-    background:linear-gradient(135deg,#f7d7e6,#cfeaf1);border:1px solid var(--line)}
-  .visit .map .pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);
-    color:var(--wine)}
-  .visit .map .cap{position:absolute;left:18px;bottom:16px;font-family:var(--serif);
-    font-style:italic;color:var(--band);font-size:18px}
-  @media(min-width:820px){.visit{grid-template-columns:1fr 1fr;gap:44px}}
-
-  /* footer-póster */
-  footer{background:var(--band);color:var(--blush);padding:70px 0 40px;text-align:center;
-    position:relative;overflow:hidden}
-  footer::before{content:"";position:absolute;inset:0;
-    background:radial-gradient(50% 60% at 50% -10%,rgba(23,174,183,.22),transparent 60%)}
-  footer>.wrap{position:relative}
-  footer .flogo{width:78px;margin:0 auto 22px;border-radius:16px;
-    box-shadow:0 16px 34px -14px rgba(0,0,0,.5)}
-  footer .fbig{font-family:var(--serif);font-weight:300;font-size:clamp(46px,15vw,132px);
-    line-height:.94;letter-spacing:-.02em}
-  footer .fbig em{font-style:italic;color:#f0b8d4}
-  footer .fcta{margin:26px 0 40px}
-  footer .fcta a{background:var(--teal);color:#fff;padding:17px 34px;border-radius:999px;
-    font-size:14px;letter-spacing:.05em;display:inline-flex;gap:10px}
-  footer .fcta a:hover{background:#fff;color:var(--band)}
-  footer .frow{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 30px;
-    font-size:13px;color:rgba(253,241,245,.72);align-items:center}
-  footer .frow a:hover{color:#f0b8d4}
-  footer .ico{display:inline-flex;gap:14px;align-items:center}
-  footer .ico svg{width:20px;height:20px}
-  footer .seal{margin-top:30px;padding-top:22px;border-top:1px solid rgba(253,241,245,.16);
-    font-size:11.5px;color:rgba(253,241,245,.55);letter-spacing:.03em}
-  footer .seal a{color:rgba(253,241,245,.78);text-decoration:underline;text-underline-offset:3px}
-
-  /* galería el espacio */
+  /* galería */
   .gal{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .gal figure{position:relative;overflow:hidden;border-radius:14px;margin:0;min-height:150px}
   .gal figure img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
@@ -211,22 +175,33 @@
 
   /* instagram feed */
   .igsec{text-align:center}
-  .ig-top{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:26px}
+  .ig-top{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:24px}
   .ig-handle{font-family:var(--serif);font-size:clamp(24px,6vw,34px);font-weight:400}
   .ig-handle a{color:var(--wine)}
   .iggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
   .iggrid a{position:relative;aspect-ratio:1;overflow:hidden;border-radius:12px;display:block}
   .iggrid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
   .iggrid a:hover img{transform:scale(1.07)}
-  .iggrid a::after{content:"";position:absolute;inset:0;background:rgba(92,20,66,0);
-    transition:background .3s;display:grid;place-items:center}
+  .iggrid a::after{content:"";position:absolute;inset:0;background:rgba(92,20,66,0);transition:background .3s}
   .iggrid a:hover::after{background:rgba(92,20,66,.42)}
   .iggrid svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.6);
     width:34px;height:34px;fill:#fff;opacity:0;transition:.3s;z-index:2}
   .iggrid a:hover svg{opacity:1;transform:translate(-50%,-50%) scale(1)}
   .ig-cta{margin-top:26px}
 
-  /* agenda pasos */
+  /* resultados */
+  .res{display:grid;gap:30px;align-items:center}
+  .res .big{font-family:var(--serif);font-weight:300;font-size:clamp(26px,6vw,40px);
+    line-height:1.16;letter-spacing:-.01em}
+  .res .big em{font-style:italic;color:var(--wine)}
+  .res .card{border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--paper)}
+  .res .card .num{font-family:var(--serif);font-size:46px;line-height:1}
+  .res .card .num.a{color:var(--wine)}.res .card .num.b{color:var(--teal)}
+  .res .card p{font-size:14px;color:var(--soft);margin-top:6px}
+  .res .igbtn{margin-top:20px}
+  @media(min-width:820px){.res{grid-template-columns:1.3fr .7fr;gap:50px}}
+
+  /* agenda */
   .agenda-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;
     padding:40px 26px;text-align:center;position:relative;overflow:hidden}
   .agenda-card::before{content:"";position:absolute;inset:0;
@@ -235,25 +210,54 @@
   .steps{display:grid;gap:24px;margin:30px 0 34px;text-align:left}
   .stp{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start}
   .stp .n{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
-    font-family:var(--serif);font-size:22px;color:#fff;
-    background:linear-gradient(135deg,var(--teal),var(--wine))}
+    font-family:var(--serif);font-size:22px;color:#fff;background:linear-gradient(135deg,var(--teal),var(--wine))}
   .stp h4{font-family:var(--serif);font-weight:400;font-size:20px;margin-bottom:3px}
   .stp p{font-size:13.5px;color:var(--soft)}
   @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
 
-  /* WhatsApp FAB */
+  /* visitanos */
+  .visit{display:grid;gap:24px}
+  .visit .info div{padding:16px 0;border-bottom:1px solid var(--line)}
+  .visit .info .lab{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--wine)}
+  .visit .info .val{font-family:var(--serif);font-size:20px;margin-top:5px}
+  .visit .map{border-radius:18px;min-height:280px;overflow:hidden;border:1px solid var(--line)}
+  .visit .map iframe{width:100%;height:100%;min-height:280px;border:0;display:block}
+  @media(min-width:820px){.visit{grid-template-columns:1fr 1fr;gap:44px}}
+
+  /* footer */
+  footer{background:var(--band);color:var(--blush);padding:60px 0 40px;text-align:center;
+    position:relative;overflow:hidden}
+  footer::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(50% 60% at 50% -10%,rgba(23,174,183,.22),transparent 60%)}
+  footer>.wrap{position:relative}
+  footer .flogo{width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 22px;
+    box-shadow:0 16px 34px -14px rgba(0,0,0,.5)}
+  footer .fbig{font-family:var(--serif);font-weight:300;font-size:clamp(46px,15vw,120px);
+    line-height:.94;letter-spacing:-.02em}
+  footer .fbig em{font-style:italic;color:#f0b8d4}
+  footer .fcta{margin:26px 0 40px}
+  footer .fcta a{background:var(--teal);color:#fff;padding:17px 34px;border-radius:999px;
+    font-size:14px;letter-spacing:.05em;display:inline-flex;gap:10px}
+  footer .fcta a:hover{background:#fff;color:var(--band)}
+  footer .frow{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 30px;
+    font-size:13px;color:rgba(253,241,245,.72);align-items:center}
+  footer .frow a:hover{color:#f0b8d4}
+  footer .ico{display:inline-flex;gap:14px;align-items:center}
+  footer .ico svg{width:20px;height:20px}
+  footer .seal{margin-top:30px;padding-top:22px;border-top:1px solid rgba(253,241,245,.16);
+    font-size:11.5px;color:rgba(253,241,245,.55);letter-spacing:.03em}
+  footer .seal a{color:rgba(253,241,245,.78);text-decoration:underline;text-underline-offset:3px}
+
   .fab{position:fixed;right:18px;bottom:18px;z-index:70;width:58px;height:58px;
     border-radius:50%;background:#25D366;display:grid;place-items:center;
     box-shadow:0 14px 30px -8px rgba(37,211,102,.6);transition:transform .2s}
   .fab:hover{transform:scale(1.07)}
   .fab svg{width:30px;height:30px;fill:#fff}
 
-  /* reveal */
   .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
   .rv.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}
-    .rv{opacity:1;transform:none}.bota path{stroke-dashoffset:0}}
+    *{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -261,33 +265,35 @@
 <nav aria-label="Principal">
   <a class="brand" href="#top" aria-label="Adara Spa · inicio"><img src="./assets/adara-logo.png" alt="Adara Spa"></a>
   <div class="links">
+    <a href="#promos">Promos</a>
     <a href="#servicios">Servicios</a>
-    <a href="#paquetes">Paquetes</a>
-    <a href="#resultados">Resultados</a>
+    <a href="#pedido">Destacados</a>
+    <a href="#instagram">Instagram</a>
     <a href="#visitanos">Visítanos</a>
   </div>
-  <a class="cta" href="https://wa.link/2grsyb" target="_blank" rel="noopener">Reservar</a>
+  <a class="cta" href="https://wa.me/584248045472?text=Hola%20Adara!%20Vi%20su%20p%C3%A1gina%20y%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Reservar</a>
 </nav>
 
 <header id="top">
   <div class="wrap hero">
     <div class="hero-text">
-      <span class="hero-vlabel">Adara Spa · Carúpano</span>
-      <span class="eyebrow rv">Estética &nbsp;·&nbsp; Masaje &nbsp;·&nbsp; Depilación láser</span>
+      <span class="hero-vlabel">Adara Spa · C.C. El Cristal</span>
+      <span class="eyebrow rv">Estética &nbsp;·&nbsp; Masaje &nbsp;·&nbsp; Depilación láser &nbsp;·&nbsp; Cejas</span>
       <h1 class="rv">Tu<br>momento<br><em>para ti</em>.</h1>
-      <p class="lead rv">Un spa en el corazón de Carúpano donde cuidar tu piel es un ritual, no un trámite.</p>
+      <p class="lead rv">Tu spa en C.C. El Cristal, Carúpano. Cuidarte aquí es un ritual, no un trámite.</p>
       <div class="svc rv">
-        <span>Estética facial y corporal</span>
+        <span>Estética facial</span>
         <span>Masajes</span>
         <span>Depilación láser</span>
+        <span>Diseño de cejas</span>
       </div>
       <div class="actions rv">
-        <a class="btn btn-solid" href="https://wa.link/2grsyb" target="_blank" rel="noopener">Reserva por WhatsApp</a>
-        <a class="btn btn-line" href="#servicios">Ver servicios</a>
+        <a class="btn btn-solid" href="https://wa.me/584248045472?text=Hola%20Adara!%20Vi%20su%20p%C3%A1gina%20y%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Reserva por WhatsApp</a>
+        <a class="btn btn-line" href="#pedido">Ver tratamientos</a>
       </div>
       <div class="hero-meta rv">
         <div><b>Lun a Vie</b>9:00 am – 5:00 pm</div>
-        <div><b>Carúpano</b>Estado Sucre</div>
+        <div><b>C.C. El Cristal</b>Carúpano, Sucre</div>
         <div><b>@adaraspacpno</b>2.600+ nos siguen</div>
       </div>
     </div>
@@ -299,80 +305,90 @@
   </div>
 </header>
 
-<svg class="bota" viewBox="0 0 120 40" aria-hidden="true">
-  <path d="M60 38 C60 20 60 12 60 4 M60 14 C48 12 40 6 34 10 C42 16 52 18 60 16 M60 20 C72 18 80 12 86 16 C78 22 68 24 60 22"/>
-</svg>
+<section id="promos" class="promos" aria-label="Promociones">
+  <div class="wrap">
+    <div class="lead-c rv"><span class="snum">✦</span><h2>Promociones del momento</h2></div>
+  </div>
+  <div class="carousel rv" aria-roledescription="carrusel">
+    <div class="slide active"><div class="bg" style="background-image:url(./assets/ig-1.jpg)"></div><img src="./assets/ig-1.jpg" alt="Promoción: 15% en tratamientos faciales"></div>
+    <div class="slide"><div class="bg" style="background-image:url(./assets/ig-3.jpg)"></div><img src="./assets/ig-3.jpg" alt="Promoción: masajes corporales"></div>
+    <div class="slide"><div class="bg" style="background-image:url(./assets/ig-4.jpg)"></div><img src="./assets/ig-4.jpg" alt="Promoción: diseño de cejas"></div>
+    <div class="slide"><div class="bg" style="background-image:url(./assets/ig-8.jpg)"></div><img src="./assets/ig-8.jpg" alt="Promoción: micropigmentación de cejas"></div>
+    <button class="c-btn c-prev" aria-label="Anterior">‹</button>
+    <button class="c-btn c-next" aria-label="Siguiente">›</button>
+    <div class="dots">
+      <button class="dot on" aria-label="Promo 1"></button>
+      <button class="dot" aria-label="Promo 2"></button>
+      <button class="dot" aria-label="Promo 3"></button>
+      <button class="dot" aria-label="Promo 4"></button>
+    </div>
+  </div>
+</section>
 
 <section id="servicios" aria-labelledby="s1">
   <div class="wrap">
     <div class="shead rv"><span class="snum">01</span><h2 id="s1">Nuestros servicios</h2></div>
     <div class="svc-list">
-      <article class="svc-row rv">
-        <span class="k">01</span>
-        <div>
-          <h3>Estética facial y corporal</h3>
-          <div class="tags"><span>Limpieza facial</span><span>Tratamientos</span><span>Cuidado de la piel</span></div>
-        </div>
-        <p>Rituales que devuelven luz y firmeza a tu piel, con productos y técnicas pensadas para tu tipo de piel.</p>
-      </article>
-      <article class="svc-row rv">
-        <span class="k">02</span>
-        <div>
-          <h3>Masajes</h3>
-          <div class="tags"><span>Relajante</span><span>Descontracturante</span><span>Bienestar</span></div>
-        </div>
-        <p>Un espacio para soltar la tensión del día. Sales distinta a como entraste.</p>
-      </article>
-      <article class="svc-row rv">
-        <span class="k">03</span>
-        <div>
-          <h3>Depilación láser</h3>
-          <div class="tags"><span>Piel suave</span><span>Resultados duraderos</span><span>Por zonas</span></div>
-        </div>
-        <p>Adiós a la rutina de la cuchilla. Piel suave y pareja, sesión tras sesión, con acompañamiento en todo el proceso.</p>
-      </article>
+      <article class="svc-row rv"><span class="k">01</span>
+        <div><h3>Estética facial</h3>
+        <div class="tags"><span>Limpieza profunda</span><span>Microdermoabrasión</span><span>Cuidado de la piel</span></div></div>
+        <p>Rituales que devuelven luz y firmeza a tu piel, con productos y técnicas para tu tipo de piel.</p></article>
+      <article class="svc-row rv"><span class="k">02</span>
+        <div><h3>Masajes corporales</h3>
+        <div class="tags"><span>Reductor</span><span>Radiofrecuencia</span><span>Ultracavitación</span></div></div>
+        <p>Tratamientos por sesiones para moldear, reafirmar y reducir medidas.</p></article>
+      <article class="svc-row rv"><span class="k">03</span>
+        <div><h3>Masaje relajante</h3>
+        <div class="tags"><span>Antiestrés</span><span>Bienestar</span><span>Descanso</span></div></div>
+        <p>Mejora la circulación, relaja los músculos y te ayuda a descansar mejor.</p></article>
+      <article class="svc-row rv"><span class="k">04</span>
+        <div><h3>Depilación láser</h3>
+        <div class="tags"><span>Piel suave</span><span>Por zonas</span><span>Duradero</span></div></div>
+        <p>Adiós a la cuchilla. Piel suave y pareja, sesión tras sesión, con acompañamiento.</p></article>
+      <article class="svc-row rv"><span class="k">05</span>
+        <div><h3>Cejas y micropigmentación</h3>
+        <div class="tags"><span>Microblading</span><span>Microshading</span><span>Micropigmentación</span></div></div>
+        <p>Diseñamos tus cejas para realzar tu mirada, con acabado natural y duradero.</p></article>
     </div>
   </div>
 </section>
 
-<section id="paquetes" class="band" aria-labelledby="s2">
+<section id="pedido" aria-labelledby="sp">
   <div class="wrap">
-    <div class="shead rv"><span class="snum">02</span><h2 id="s2">Paquetes Adara</h2></div>
-    <div class="pk">
-      <div class="pk-card rv">
-        <div class="k">Para tu piel</div>
-        <h3>Ritual facial</h3>
-        <p>Limpieza, hidratación y luz para tu rostro. Ideal si buscas empezar a cuidarte con constancia.</p>
-        <span class="go">Cotiza por WhatsApp →</span>
-      </div>
-      <div class="pk-card rv">
-        <div class="k">Piel suave</div>
-        <h3>Plan de láser</h3>
-        <p>Sesiones de depilación láser por zona, con seguimiento para que veas el avance real.</p>
-        <span class="go">Cotiza por WhatsApp →</span>
-      </div>
-      <div class="pk-card rv">
-        <div class="k">Solo para ti</div>
-        <h3>Día de spa</h3>
-        <p>Combina masaje y estética en una experiencia completa. El regalo perfecto —para ti o para quien quieras.</p>
-        <span class="go">Cotiza por WhatsApp →</span>
-      </div>
+    <div class="shead rv"><span class="snum">02</span><h2 id="sp">Lo más pedido</h2></div>
+    <div class="prod">
+      <div class="pcard rv"><div class="ph"><img src="./assets/spa-facial.jpg" alt="Limpieza facial profunda" loading="lazy"></div>
+        <div class="pb"><h3>Limpieza facial profunda</h3><p>Con microdermoabrasión, para una piel limpia y radiante.</p>
+        <a href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20info%20de%20la%20limpieza%20facial" target="_blank" rel="noopener">Consultar por WhatsApp →</a></div></div>
+      <div class="pcard rv"><div class="ph"><img src="./assets/spa-massage.jpg" alt="Masaje reductor" loading="lazy"></div>
+        <div class="pb"><h3>Masaje reductor</h3><p>Por sesiones, para moldear y reafirmar tu figura.</p>
+        <a href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20info%20del%20masaje%20reductor" target="_blank" rel="noopener">Consultar por WhatsApp →</a></div></div>
+      <div class="pcard rv"><div class="ph"><img src="./assets/spa-stones.jpg" alt="Radiofrecuencia" loading="lazy"></div>
+        <div class="pb"><h3>Radiofrecuencia</h3><p>Firmeza y reducción de medidas, combinada con masaje.</p>
+        <a href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20info%20de%20la%20radiofrecuencia" target="_blank" rel="noopener">Consultar por WhatsApp →</a></div></div>
+      <div class="pcard rv"><div class="ph"><img src="./assets/ig-8.jpg" alt="Diseño de cejas" loading="lazy"></div>
+        <div class="pb"><h3>Diseño de cejas</h3><p>Microblading, microshading y micropigmentación.</p>
+        <a href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20info%20del%20dise%C3%B1o%20de%20cejas" target="_blank" rel="noopener">Consultar por WhatsApp →</a></div></div>
+      <div class="pcard rv"><div class="ph"><img src="./assets/spa-products.jpg" alt="Depilación láser" loading="lazy"></div>
+        <div class="pb"><h3>Depilación láser</h3><p>Piel suave y duradera, por zonas, a tu ritmo.</p>
+        <a href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20info%20de%20la%20depilaci%C3%B3n%20l%C3%A1ser" target="_blank" rel="noopener">Consultar por WhatsApp →</a></div></div>
+      <div class="pcard rv"><div class="ph"><img src="./assets/spa-candle.jpg" alt="Masaje relajante" loading="lazy"></div>
+        <div class="pb"><h3>Masaje relajante</h3><p>Suelta la tensión, alivia el estrés y descansa mejor.</p>
+        <a href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20info%20del%20masaje%20relajante" target="_blank" rel="noopener">Consultar por WhatsApp →</a></div></div>
     </div>
-    <p class="rv" style="margin-top:26px;font-size:14px;color:rgba(247,227,238,.75)">
-      Armamos tu paquete a tu medida. Escríbenos y te pasamos precios y disponibilidad al día.</p>
   </div>
 </section>
 
 <section id="espacio" aria-labelledby="se">
   <div class="wrap">
     <div class="shead rv"><span class="snum">03</span><h2 id="se">El espacio</h2></div>
-    <p class="rv" style="max-width:56ch;color:var(--soft);font-size:15px;margin:-18px 0 30px">Un ambiente pensado para desconectar. Así se siente cuidarte en Adara.</p>
+    <p class="rv" style="max-width:56ch;color:var(--soft);font-size:15px;margin:-16px 0 28px">Un ambiente pensado para desconectar. Así se siente cuidarte en Adara.</p>
     <div class="gal">
-      <figure class="tall rv"><img src="./assets/spa-facial.jpg" alt="Tratamiento facial en Adara Spa" loading="lazy"><figcaption>Estética facial</figcaption></figure>
-      <figure class="rv"><img src="./assets/spa-candle.jpg" alt="Ambiente relajante con velas" loading="lazy"></figure>
-      <figure class="rv"><img src="./assets/spa-products.jpg" alt="Productos de cuidado de la piel" loading="lazy"></figure>
+      <figure class="tall rv"><img src="./assets/spa-facial.jpg" alt="Tratamiento facial" loading="lazy"><figcaption>Estética facial</figcaption></figure>
+      <figure class="rv"><img src="./assets/spa-candle.jpg" alt="Ambiente relajante" loading="lazy"></figure>
+      <figure class="rv"><img src="./assets/spa-products.jpg" alt="Productos de cuidado" loading="lazy"></figure>
       <figure class="wide rv"><img src="./assets/spa-massage.jpg" alt="Sesión de masaje" loading="lazy"><figcaption>Masajes</figcaption></figure>
-      <figure class="rv"><img src="./assets/spa-stones.jpg" alt="Terapia con piedras calientes" loading="lazy"></figure>
+      <figure class="rv"><img src="./assets/spa-stones.jpg" alt="Terapia con piedras" loading="lazy"></figure>
       <figure class="rv"><img src="./assets/spa-ambiance.jpg" alt="Detalles del spa" loading="lazy"></figure>
     </div>
   </div>
@@ -386,11 +402,9 @@
       <a class="btn btn-line igbtn rv" href="https://instagram.com/adaraspacpno" target="_blank" rel="noopener">Mira antes y después en Instagram</a>
     </div>
     <div class="card rv">
-      <div class="num a">2.600+</div>
-      <p>personas nos siguen en Instagram</p>
+      <div class="num a">2.600+</div><p>personas nos siguen en Instagram</p>
       <hr class="rule" style="margin:18px 0">
-      <div class="num b">100%</div>
-      <p>atención personalizada, una clienta a la vez</p>
+      <div class="num b">100%</div><p>atención personalizada, una clienta a la vez</p>
     </div>
   </div>
 </section>
@@ -402,11 +416,7 @@
       <div class="ig-handle"><a href="https://instagram.com/adaraspacpno" target="_blank" rel="noopener">@adaraspacpno</a></div>
       <span style="color:var(--soft);font-size:14px">Promociones, antes y después, y el día a día del spa.</span>
     </div>
-    <div class="iggrid rv">
-      <a href="https://instagram.com/adaraspacpno" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="./assets/spa-facial.jpg" alt="Publicación de Adara Spa" loading="lazy"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
-      <a href="https://instagram.com/adaraspacpno" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="./assets/spa-stones.jpg" alt="Publicación de Adara Spa" loading="lazy"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
-      <a href="https://instagram.com/adaraspacpno" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="./assets/spa-ambiance.jpg" alt="Publicación de Adara Spa" loading="lazy"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg></a>
-    </div>
+    <div class="iggrid rv" id="iggrid"></div>
     <a class="btn btn-line ig-cta rv" href="https://instagram.com/adaraspacpno" target="_blank" rel="noopener">Síguenos en Instagram</a>
   </div>
 </section>
@@ -419,9 +429,9 @@
       <div class="steps">
         <div class="stp rv"><div class="n">1</div><div><h4>Escríbenos</h4><p>Cuéntanos qué te gustaría hacerte por WhatsApp.</p></div></div>
         <div class="stp rv"><div class="n">2</div><div><h4>Elegimos juntas</h4><p>Te recomendamos el tratamiento y te pasamos precio y disponibilidad.</p></div></div>
-        <div class="stp rv"><div class="n">3</div><div><h4>Reservas tu día</h4><p>Confirmas tu cita y te esperamos en el spa.</p></div></div>
+        <div class="stp rv"><div class="n">3</div><div><h4>Reservas tu día</h4><p>Confirmas tu cita y te esperamos en C.C. El Cristal.</p></div></div>
       </div>
-      <a class="btn btn-solid rv" href="https://wa.link/2grsyb" target="_blank" rel="noopener">Agenda por WhatsApp</a>
+      <a class="btn btn-solid rv" href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Agenda por WhatsApp</a>
     </div>
   </div>
 </section>
@@ -430,15 +440,14 @@
   <div class="wrap visit">
     <div class="info">
       <div class="shead rv" style="margin-bottom:8px"><span class="snum">07</span><h2 id="s4">Visítanos</h2></div>
+      <div class="rv"><div class="lab">Dónde</div><div class="val">Centro Comercial El Cristal, Carúpano</div></div>
       <div class="rv"><div class="lab">Horario</div><div class="val">Lunes a viernes · 9:00 am – 5:00 pm</div></div>
-      <div class="rv"><div class="lab">Dónde</div><div class="val">Carúpano, Estado Sucre</div></div>
-      <div class="rv"><div class="lab">Reservas</div><div class="val">Por WhatsApp · respuesta rápida</div></div>
+      <div class="rv"><div class="lab">WhatsApp</div><div class="val">0424-804.54.72</div></div>
       <div class="rv"><div class="lab">Síguenos</div><div class="val">@adaraspacpno</div></div>
-      <a class="btn btn-solid rv" style="margin-top:22px" href="https://wa.link/2grsyb" target="_blank" rel="noopener">Agenda tu cita</a>
+      <a class="btn btn-solid rv" style="margin-top:20px" href="https://www.google.com/maps/dir/?api=1&destination=10.662094,-63.251202" target="_blank" rel="noopener">Cómo llegar</a>
     </div>
-    <div class="map rv" role="img" aria-label="Adara Spa en Carúpano">
-      <svg class="pin" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
-      <span class="cap">Carúpano · Sucre</span>
+    <div class="map rv">
+      <iframe src="https://maps.google.com/maps?q=10.662094,-63.251202&z=17&hl=es&output=embed" loading="lazy" title="Adara Spa en C.C. El Cristal, Carúpano" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
@@ -448,16 +457,16 @@
     <img class="flogo rv" src="./assets/adara-logo.png" alt="Adara Spa">
     <div class="fbig rv">Reserva tu<br><em>momento</em>.</div>
     <div class="fcta rv">
-      <a href="https://wa.link/2grsyb" target="_blank" rel="noopener">
+      <a href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20agendar%20una%20cita" target="_blank" rel="noopener">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.9.9-.9 2.2-.9 2.3 0 .1.9 3.1 3.9 4.9 2.9 1.3 2.9.9 3.4.9.5 0 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2"/></svg>
         Escríbenos por WhatsApp
       </a>
     </div>
     <div class="frow">
       <span>Lun–Vie · 9am–5pm</span>
-      <span>Carúpano, Sucre</span>
+      <span>C.C. El Cristal, Carúpano</span>
       <a class="ico" href="https://instagram.com/adaraspacpno" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg>
         @adaraspacpno
       </a>
     </div>
@@ -467,13 +476,34 @@
   </div>
 </footer>
 
-<a class="fab" href="https://wa.link/2grsyb" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+<a class="fab" href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.9.9-.9 2.2-.9 2.3 0 .1.9 3.1 3.9 4.9 2.9 1.3 2.9.9 3.4.9.5 0 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2"/></svg>
 </a>
 
 <script>
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
-  document.querySelectorAll('.rv,.bota').forEach(el=>io.observe(el));
+  const IG="https://instagram.com/adaraspacpno";
+  const posts=["ig-9","ig-1","ig-7","ig-3","ig-6","ig-4"];
+  const igico='<svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg>';
+  document.getElementById('iggrid').innerHTML=posts.map(p=>
+    `<a href="${IG}" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="./assets/${p}.jpg" alt="Publicación de Adara Spa" loading="lazy">${igico}</a>`).join('');
+
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  (function(){
+    const car=document.querySelector('.carousel'); if(!car)return;
+    const slides=[...car.querySelectorAll('.slide')], dots=[...car.querySelectorAll('.dot')];
+    let i=0,t;
+    function go(n){slides[i].classList.remove('active');dots[i]&&dots[i].classList.remove('on');
+      i=(n+slides.length)%slides.length;slides[i].classList.add('active');dots[i]&&dots[i].classList.add('on');}
+    function next(){go(i+1)}
+    function start(){if(!matchMedia('(prefers-reduced-motion: reduce)').matches)t=setInterval(next,4200)}
+    function reset(){clearInterval(t);start()}
+    car.querySelector('.c-next').onclick=()=>{next();reset()};
+    car.querySelector('.c-prev').onclick=()=>{go(i-1);reset()};
+    dots.forEach((d,n)=>d.onclick=()=>{go(n);reset()});
+    start();
+  })();
 </script>
 </body>
 </html>
