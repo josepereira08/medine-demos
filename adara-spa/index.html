@@ -101,28 +101,61 @@
       color:var(--wine)}
   }
 
-  /* PROMOCIONES carousel */
-  .promos{padding:26px 0 8px}
-  .promos .lead-c{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-  .promos h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,6vw,40px)}
-  .carousel{position:relative;max-width:1180px;margin:0 auto;width:calc(100% - 44px);
-    height:clamp(420px,80vw,520px);border-radius:22px;overflow:hidden;
-    box-shadow:0 30px 60px -30px rgba(120,6,66,.45);background:var(--band)}
-  .slide{position:absolute;inset:0;opacity:0;transition:opacity .8s ease;display:grid;place-items:center}
-  .slide.active{opacity:1}
-  .slide .bg{position:absolute;inset:0;background-size:cover;background-position:center;
-    filter:blur(26px) brightness(.6);transform:scale(1.15)}
-  .slide img{position:relative;max-height:92%;max-width:90%;border-radius:12px;
-    box-shadow:0 18px 40px rgba(0,0,0,.35)}
-  .c-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:44px;height:44px;
-    border-radius:50%;border:0;background:rgba(253,241,245,.9);color:var(--band);
-    font-size:20px;cursor:pointer;display:grid;place-items:center;transition:.2s}
-  .c-btn:hover{background:#fff}
-  .c-prev{left:14px}.c-next{right:14px}
-  .dots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);z-index:4;
-    display:flex;gap:8px}
-  .dot{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer;transition:.25s}
-  .dot.on{background:#fff;width:26px;border-radius:6px}
+  /* PROMOCIONES (diseñadas con código) */
+  .promos{padding:0;margin:56px 0}
+  .promo-band{position:relative;width:100%;min-height:clamp(380px,56vw,440px);overflow:hidden}
+  .pslide{position:absolute;inset:0;opacity:0;transition:opacity .9s ease;
+    display:flex;align-items:center;pointer-events:none}
+  .pslide.active{opacity:1;pointer-events:auto}
+  .pslide.g1{background:linear-gradient(120deg,var(--wine-deep),var(--wine) 55%,var(--purple))}
+  .pslide.g2{background:linear-gradient(120deg,#0e6f86,var(--teal) 60%,var(--celeste))}
+  .pslide.g3{background:linear-gradient(120deg,var(--band),var(--band-2) 55%,var(--wine))}
+  .pslide.g4{background:linear-gradient(125deg,#137f86,var(--band) 78%)}
+  .pslide::before{content:"";position:absolute;inset:0;
+    background:radial-gradient(60% 90% at 100% 50%,rgba(255,255,255,.14),transparent 60%)}
+  .pslide-in{max-width:1180px;width:100%;margin:0 auto;padding:44px;color:#fff;position:relative;z-index:2}
+  .p-eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    color:rgba(255,255,255,.85);margin-bottom:14px}
+  .p-title{font-family:var(--serif);font-weight:300;font-size:clamp(34px,7.5vw,70px);
+    line-height:1;letter-spacing:-.01em;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .p-title b{font-weight:500}.p-title em{font-style:italic}
+  .p-off{font-family:var(--serif);font-size:clamp(66px,16vw,132px);font-weight:400;line-height:.8}
+  .p-sub{margin-top:16px;max-width:44ch;font-size:clamp(15px,2.3vw,18px);
+    color:rgba(255,255,255,.92);line-height:1.5}
+  .p-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .p-chips span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:6px 13px}
+  .p-cta{margin-top:24px;display:inline-flex;gap:9px;background:#fff;color:var(--wine);
+    padding:14px 26px;border-radius:999px;font-size:13.5px;letter-spacing:.04em;
+    align-items:center;transition:.2s}
+  .p-cta:hover{transform:translateY(-2px);box-shadow:0 14px 28px -10px rgba(0,0,0,.45)}
+  .p-mark{position:absolute;right:-1%;top:50%;transform:translateY(-50%);z-index:1;
+    font-family:var(--serif);font-style:italic;font-weight:300;
+    font-size:clamp(130px,30vw,340px);color:rgba(255,255,255,.09);
+    line-height:.8;pointer-events:none;white-space:nowrap}
+  .p-ctrl{position:absolute;bottom:18px;right:22px;z-index:5;display:flex;gap:8px}
+  .p-ctrl button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.5);
+    background:rgba(255,255,255,.12);color:#fff;font-size:19px;cursor:pointer;
+    display:grid;place-items:center;transition:.2s;backdrop-filter:blur(4px)}
+  .p-ctrl button:hover{background:rgba(255,255,255,.28)}
+  .p-dots{position:absolute;bottom:28px;left:44px;z-index:5;display:flex;gap:8px}
+  .p-dot{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer;transition:.25s}
+  .p-dot.on{background:#fff;width:26px;border-radius:6px}
+  @media(max-width:640px){.pslide-in{padding:34px 24px 74px}.p-dots{left:24px;bottom:22px}.p-ctrl{bottom:16px;right:16px}}
+
+  /* modal instagram */
+  .modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+  .modal.open{display:flex}
+  .modal-bg{position:absolute;inset:0;background:rgba(30,8,22,.74);backdrop-filter:blur(5px)}
+  .modal-inner{position:relative;z-index:2;max-width:400px;width:100%;max-height:88vh;overflow:auto;
+    background:#fff;border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:12px;
+    box-shadow:0 30px 70px -20px rgba(0,0,0,.6)}
+  .modal-x{position:absolute;top:-48px;right:0;width:40px;height:40px;border-radius:50%;border:0;
+    background:rgba(255,255,255,.92);font-size:22px;cursor:pointer;color:var(--band);line-height:1}
+  #modal-content{min-height:180px;display:grid;place-items:center}
+  #modal-content .instagram-media{margin:0!important;min-width:auto!important;width:100%!important}
+  #modal-content .m-fallback img{border-radius:12px;max-height:70vh}
+  .modal-ig{align-self:center}
 
   /* SECTION shell */
   section{padding:60px 0;position:relative}
@@ -179,14 +212,18 @@
   .ig-handle{font-family:var(--serif);font-size:clamp(24px,6vw,34px);font-weight:400}
   .ig-handle a{color:var(--wine)}
   .iggrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  .iggrid a{position:relative;aspect-ratio:1;overflow:hidden;border-radius:12px;display:block}
-  .iggrid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-  .iggrid a:hover img{transform:scale(1.07)}
-  .iggrid a::after{content:"";position:absolute;inset:0;background:rgba(92,20,66,0);transition:background .3s}
-  .iggrid a:hover::after{background:rgba(92,20,66,.42)}
-  .iggrid svg{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.6);
+  .iggrid .igt{position:relative;aspect-ratio:1;overflow:hidden;border-radius:12px;display:block;
+    border:0;padding:0;background:none;cursor:pointer}
+  .iggrid .igt img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .iggrid .igt:hover img{transform:scale(1.07)}
+  .iggrid .igt::after{content:"";position:absolute;inset:0;background:rgba(92,20,66,0);transition:background .3s}
+  .iggrid .igt:hover::after{background:rgba(92,20,66,.42)}
+  .iggrid .igbrand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.6);
     width:34px;height:34px;fill:#fff;opacity:0;transition:.3s;z-index:2}
-  .iggrid a:hover svg{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  .iggrid .igt:hover .igbrand{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  .iggrid .play{position:absolute;top:9px;right:9px;z-index:3;width:26px;height:26px;border-radius:50%;
+    background:rgba(0,0,0,.42);display:grid;place-items:center}
+  .iggrid .play svg{width:12px;height:12px;fill:#fff;margin-left:1px}
   .ig-cta{margin-top:26px}
 
   /* resultados */
@@ -306,21 +343,54 @@
 </header>
 
 <section id="promos" class="promos" aria-label="Promociones">
-  <div class="wrap">
-    <div class="lead-c rv"><span class="snum">✦</span><h2>Promociones del momento</h2></div>
-  </div>
-  <div class="carousel rv" aria-roledescription="carrusel">
-    <div class="slide active"><div class="bg" style="background-image:url(./assets/ig-1.jpg)"></div><img src="./assets/ig-1.jpg" alt="Promoción: 15% en tratamientos faciales"></div>
-    <div class="slide"><div class="bg" style="background-image:url(./assets/ig-3.jpg)"></div><img src="./assets/ig-3.jpg" alt="Promoción: masajes corporales"></div>
-    <div class="slide"><div class="bg" style="background-image:url(./assets/ig-4.jpg)"></div><img src="./assets/ig-4.jpg" alt="Promoción: diseño de cejas"></div>
-    <div class="slide"><div class="bg" style="background-image:url(./assets/ig-8.jpg)"></div><img src="./assets/ig-8.jpg" alt="Promoción: micropigmentación de cejas"></div>
-    <button class="c-btn c-prev" aria-label="Anterior">‹</button>
-    <button class="c-btn c-next" aria-label="Siguiente">›</button>
-    <div class="dots">
-      <button class="dot on" aria-label="Promo 1"></button>
-      <button class="dot" aria-label="Promo 2"></button>
-      <button class="dot" aria-label="Promo 3"></button>
-      <button class="dot" aria-label="Promo 4"></button>
+  <div class="promo-band">
+    <div class="pslide g1 active">
+      <div class="pslide-in">
+        <div class="p-eyebrow">Promoción · Faciales</div>
+        <div class="p-title"><span class="p-off">15%</span> <span>de descuento</span></div>
+        <p class="p-sub">En tratamientos faciales — limpieza facial profunda con microdermoabrasión, para una piel radiante.</p>
+        <a class="p-cta" href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20la%20promo%20de%2015%25%20en%20faciales" target="_blank" rel="noopener">Reserva la tuya →</a>
+      </div>
+      <div class="p-mark" aria-hidden="true">Piel</div>
+    </div>
+    <div class="pslide g2">
+      <div class="pslide-in">
+        <div class="p-eyebrow">Cuerpo · Planes por sesiones</div>
+        <div class="p-title"><b>Masajes</b> <em>que moldean</em></div>
+        <div class="p-chips"><span>Reductor</span><span>Radiofrecuencia</span><span>Ultracavitación</span></div>
+        <p class="p-sub">Reduce medidas y reafirma tu figura con planes de varias sesiones.</p>
+        <a class="p-cta" href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20info%20de%20los%20masajes%20corporales" target="_blank" rel="noopener">Consultar →</a>
+      </div>
+      <div class="p-mark" aria-hidden="true">Cuerpo</div>
+    </div>
+    <div class="pslide g3">
+      <div class="pslide-in">
+        <div class="p-eyebrow">Mirada · Cejas</div>
+        <div class="p-title"><b>Diseño</b> <em>de cejas</em></div>
+        <div class="p-chips"><span>Microblading</span><span>Microshading</span><span>Micropigmentación</span></div>
+        <p class="p-sub">Realza tu mirada con un acabado natural y duradero, diseñado para ti.</p>
+        <a class="p-cta" href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20info%20del%20dise%C3%B1o%20de%20cejas" target="_blank" rel="noopener">Agenda tu cita →</a>
+      </div>
+      <div class="p-mark" aria-hidden="true">Cejas</div>
+    </div>
+    <div class="pslide g4">
+      <div class="pslide-in">
+        <div class="p-eyebrow">Bienestar</div>
+        <div class="p-title"><b>Masaje</b> <em>relajante</em></div>
+        <p class="p-sub">Mejora la circulación, relaja los músculos, alivia el estrés y te ayuda a descansar mejor.</p>
+        <a class="p-cta" href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20un%20masaje%20relajante" target="_blank" rel="noopener">Reserva tu momento →</a>
+      </div>
+      <div class="p-mark" aria-hidden="true">Relax</div>
+    </div>
+    <div class="p-dots">
+      <button class="p-dot on" aria-label="Promo 1"></button>
+      <button class="p-dot" aria-label="Promo 2"></button>
+      <button class="p-dot" aria-label="Promo 3"></button>
+      <button class="p-dot" aria-label="Promo 4"></button>
+    </div>
+    <div class="p-ctrl">
+      <button class="p-prev" aria-label="Anterior">‹</button>
+      <button class="p-next" aria-label="Siguiente">›</button>
     </div>
   </div>
 </section>
@@ -476,31 +546,69 @@
   </div>
 </footer>
 
+<div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="Publicación de Instagram">
+  <div class="modal-bg" data-close></div>
+  <div class="modal-inner">
+    <button class="modal-x" data-close aria-label="Cerrar">×</button>
+    <div id="modal-content"></div>
+    <a class="btn btn-solid modal-ig" id="modal-ig" href="#" target="_blank" rel="noopener">Ver en Instagram ↗</a>
+  </div>
+</div>
+
 <a class="fab" href="https://wa.me/584248045472?text=Hola%20Adara!%20Quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.9.9-.9 2.2-.9 2.3 0 .1.9 3.1 3.9 4.9 2.9 1.3 2.9.9 3.4.9.5 0 1.7-.7 1.9-1.4.2-.6.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4M12 2a10 10 0 00-8.6 15L2 22l5.1-1.3A10 10 0 1012 2"/></svg>
 </a>
 
 <script>
   const IG="https://instagram.com/adaraspacpno";
-  const posts=["ig-9","ig-1","ig-7","ig-3","ig-6","ig-4"];
-  const igico='<svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg>';
-  document.getElementById('iggrid').innerHTML=posts.map(p=>
-    `<a href="${IG}" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="./assets/${p}.jpg" alt="Publicación de Adara Spa" loading="lazy">${igico}</a>`).join('');
+  const igbrand='<svg class="igbrand" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0 3.1a4.9 4.9 0 110 9.8 4.9 4.9 0 010-9.8zm0 8.1a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm6.3-8.3a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg>';
+  const playico='<span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>';
+  // imagen local + shortcode real del post + si es reel (video)
+  const posts=[
+    {i:"ig-9",c:"DLktoWQgreR"},{i:"ig-1",c:"CqXtmHqOuUK"},{i:"ig-7",c:"DND8SYPAK99",v:1},
+    {i:"ig-3",c:"DX7AWbHx9Gl",v:1},{i:"ig-6",c:"DSnF1t6EXMF",v:1},{i:"ig-4",c:"DXKTowJjk3j"}
+  ];
+  const grid=document.getElementById('iggrid');
+  grid.innerHTML=posts.map(p=>
+    `<button class="igt" data-c="${p.c}" data-i="${p.i}" aria-label="Ver publicación de Instagram">`+
+    `<img src="./assets/${p.i}.jpg" alt="Publicación de Adara Spa" loading="lazy">`+
+    (p.v?playico:'')+igbrand+`</button>`).join('');
 
+  // ── modal con embed real de Instagram ──
+  const modal=document.getElementById('modal'), mc=document.getElementById('modal-content'), mig=document.getElementById('modal-ig');
+  let igLoaded=false,igLoading=false,igCbs=[];
+  function loadIg(cb){ if(igLoaded){cb();return;} igCbs.push(cb); if(igLoading)return; igLoading=true;
+    const s=document.createElement('script'); s.async=true; s.src="https://www.instagram.com/embed.js";
+    s.onload=()=>{igLoaded=true;igCbs.forEach(f=>f());igCbs=[];}; s.onerror=()=>{igCbs.forEach(f=>f());igCbs=[];}; document.body.appendChild(s); }
+  function openPost(p){
+    const url="https://www.instagram.com/p/"+p.c+"/";
+    mig.href=url;
+    mc.innerHTML='<div class="m-fallback"><img src="./assets/'+p.i+'.jpg" alt="Publicación de Adara Spa"></div>'+
+      '<blockquote class="instagram-media" data-instgrm-permalink="'+url+'?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;width:100%"></blockquote>';
+    modal.classList.add('open'); document.body.style.overflow='hidden';
+    loadIg(()=>{ if(window.instgrm){ const bq=mc.querySelector('.instagram-media'); const fb=mc.querySelector('.m-fallback'); if(fb)fb.style.display='none'; window.instgrm.Embeds.process(); } });
+  }
+  grid.querySelectorAll('.igt').forEach((b,n)=>b.onclick=()=>openPost(posts[n]));
+  function closeModal(){modal.classList.remove('open');mc.innerHTML='';document.body.style.overflow='';}
+  modal.querySelectorAll('[data-close]').forEach(el=>el.onclick=closeModal);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+
+  // ── reveal ──
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 
+  // ── carrusel de promociones (codificado) ──
   (function(){
-    const car=document.querySelector('.carousel'); if(!car)return;
-    const slides=[...car.querySelectorAll('.slide')], dots=[...car.querySelectorAll('.dot')];
+    const band=document.querySelector('.promo-band'); if(!band)return;
+    const slides=[...band.querySelectorAll('.pslide')], dots=[...band.querySelectorAll('.p-dot')];
     let i=0,t;
     function go(n){slides[i].classList.remove('active');dots[i]&&dots[i].classList.remove('on');
       i=(n+slides.length)%slides.length;slides[i].classList.add('active');dots[i]&&dots[i].classList.add('on');}
     function next(){go(i+1)}
-    function start(){if(!matchMedia('(prefers-reduced-motion: reduce)').matches)t=setInterval(next,4200)}
+    function start(){if(!matchMedia('(prefers-reduced-motion: reduce)').matches)t=setInterval(next,4600)}
     function reset(){clearInterval(t);start()}
-    car.querySelector('.c-next').onclick=()=>{next();reset()};
-    car.querySelector('.c-prev').onclick=()=>{go(i-1);reset()};
+    band.querySelector('.p-next').onclick=()=>{next();reset()};
+    band.querySelector('.p-prev').onclick=()=>{go(i-1);reset()};
     dots.forEach((d,n)=>d.onclick=()=>{go(n);reset()});
     start();
   })();
