@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Dentalia · Odontología Integral</title>
-<meta property="og:title" content="Dentalia · Odontología Integral">
+<title>Dental · Odontología Integral</title>
+<meta property="og:title" content="Dental · Odontología Integral">
 <meta property="og:description" content="Tu mejor sonrisa empieza aquí. Odontología con tecnología de última generación y trato humano.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
@@ -199,6 +199,29 @@
   footer .fbot a{color:#bcd0e6;text-decoration:underline;text-underline-offset:3px}
   @media(min-width:760px){footer .ftop{grid-template-columns:2fr 1fr 1fr}}
 
+  /* SPLIT (imagen + texto) */
+  .split{display:grid;gap:34px;align-items:center}
+  .split h2{font-size:clamp(28px,4.5vw,40px);margin:16px 0 14px}
+  .split p{color:var(--muted);font-size:16px;margin-bottom:8px}
+  .split .img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3.4}
+  .split .img img{width:100%;height:100%;object-fit:cover}
+  .split .ul{list-style:none;display:grid;gap:12px;margin:14px 0 0}
+  .split .ul li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink)}
+  .split .ul svg{width:22px;height:22px;stroke:var(--cyan);fill:none;stroke-width:2.4;flex:none;margin-top:2px}
+  .split .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .split .chips span{font-family:var(--disp);font-size:13px;font-weight:600;color:var(--blue);background:var(--sky);padding:8px 14px;border-radius:999px}
+  @media(min-width:860px){.split{grid-template-columns:1fr 1fr;gap:60px}.split.rev .img{order:2}}
+
+  /* BANDA de imagen a todo ancho */
+  .imgband{position:relative;min-height:440px;display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;padding:0}
+  .imgband .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .imgband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,33,56,.55),rgba(13,76,138,.72))}
+  .imgband .in{position:relative;z-index:2;max-width:720px;padding:80px 24px}
+  .imgband h2{font-size:clamp(28px,5vw,46px);margin-bottom:14px;color:#fff}
+  .imgband p{color:rgba(255,255,255,.92);font-size:17px;margin-bottom:26px}
+  .imgband .btn-solid{background:#fff;color:var(--blue)}
+  .imgband .btn-solid:hover{background:var(--navy);color:#fff}
+
   .fab{position:fixed;right:18px;bottom:18px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.6);transition:transform .2s}
   .fab:hover{transform:scale(1.07)}
   .fab svg{width:30px;height:30px;fill:#fff}
@@ -212,7 +235,7 @@
 
 <nav>
   <div class="bar">
-    <a class="brand" href="#top"><span class="tag"></span>Denta<b>lia</b></a>
+    <a class="brand" href="#top"><span class="tag"></span>Denta<b>l</b></a>
     <div class="links">
       <a href="#servicios">Servicios</a>
       <a href="#nosotros">Por qué elegirnos</a>
@@ -283,6 +306,24 @@
   </div>
 </section>
 
+<section id="ortodoncia">
+  <div class="wrap"><div class="split">
+    <div class="img rv"><img src="./assets/dl-8.jpg" alt="Alineadores invisibles" loading="lazy"></div>
+    <div class="rv">
+      <span class="eyebrow"><span class="dot"></span>Ortodoncia invisible</span>
+      <h2>Endereza tu sonrisa sin que se note</h2>
+      <p>Con alineadores transparentes, cómodos y removibles. Nadie notará que los llevas —solo verán tu sonrisa mejorando día a día.</p>
+      <ul class="ul">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Prácticamente invisibles</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Te los quitas para comer y cepillarte</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Cómodos, sin brackets metálicos</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Resultados visibles en pocos meses</li>
+      </ul>
+      <a class="btn btn-solid" style="margin-top:24px" href="#contacto">Consulta si son para ti</a>
+    </div>
+  </div></div>
+</section>
+
 <section id="nosotros" class="why">
   <div class="wrap">
     <div class="sec-head rv">
@@ -299,6 +340,24 @@
   </div>
 </section>
 
+<section id="especialista" class="why" style="background:#fff">
+  <div class="wrap"><div class="split rev">
+    <div class="img rv"><img src="./assets/dl-11.jpg" alt="Odontólogo especialista" loading="lazy"></div>
+    <div class="rv">
+      <span class="eyebrow"><span class="dot"></span>Conoce a tu especialista</span>
+      <h2>Manos expertas en las que confiar</h2>
+      <p>Nuestro equipo de odontólogos combina formación de primer nivel, años de experiencia y un trato humano que te hace sentir en confianza desde que entras por la puerta.</p>
+      <p>Porque detrás de cada sonrisa hay una persona que se toma el tiempo de escucharte y explicarte todo con claridad.</p>
+      <div class="chips">
+        <span>+15 años de experiencia</span>
+        <span>Formación especializada</span>
+        <span>Actualización constante</span>
+        <span>Trato cercano</span>
+      </div>
+    </div>
+  </div></div>
+</section>
+
 <section id="consultorio">
   <div class="wrap">
     <div class="sec-head rv">
@@ -313,6 +372,8 @@
       <figure class="wide rv"><img src="./assets/dl-1.jpg" alt="Recepción y sala" loading="lazy"><figcaption>Ambiente cómodo y seguro</figcaption></figure>
       <figure class="rv"><img src="./assets/dl-6.jpg" alt="Sillón dental" loading="lazy"></figure>
       <figure class="rv"><img src="./assets/dl-4.jpg" alt="Equipo atendiendo" loading="lazy"></figure>
+      <figure class="wide rv"><img src="./assets/dl-14.jpg" alt="Consulta con paciente" loading="lazy"><figcaption>Atención cercana</figcaption></figure>
+      <figure class="rv"><img src="./assets/dl-13.jpg" alt="Procedimiento dental" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -348,6 +409,16 @@
       <div class="step rv"><div class="n">3</div><h3>Plan a tu medida</h3><p>Te explicamos todo con claridad, con opciones y precios transparentes.</p></div>
       <div class="step rv"><div class="n">4</div><h3>Tu tratamiento</h3><p>Cuidamos cada detalle para que salgas con una sonrisa sana y feliz.</p></div>
     </div>
+  </div>
+</section>
+
+<section class="imgband">
+  <img class="bg" src="./assets/dl-14.jpg" alt="Paciente feliz en la clínica dental" loading="lazy">
+  <div class="in rv">
+    <span class="eyebrow" style="background:rgba(255,255,255,.15);color:#dcefff">Tu sonrisa, nuestra pasión</span>
+    <h2 style="margin-top:16px">Vuelve a sonreír con confianza</h2>
+    <p>Miles de pacientes ya disfrutan de una sonrisa sana y bonita. El próximo puedes ser tú.</p>
+    <a class="btn btn-solid" href="#contacto">Agenda tu evaluación</a>
   </div>
 </section>
 
@@ -408,7 +479,7 @@
   <div class="wrap">
     <div class="ftop">
       <div>
-        <div class="brand"><span class="tag"></span>Dentalia</div>
+        <div class="brand"><span class="tag"></span>Dental</div>
         <p>Odontología integral con tecnología de última generación y trato humano. Tu mejor sonrisa empieza aquí.</p>
       </div>
       <div>
@@ -431,7 +502,7 @@
       </div>
     </div>
     <div class="fbot">
-      <span>© Dentalia · Odontología Integral</span>
+      <span>© Dental · Odontología Integral</span>
       <span>Demo diseñada por <a href="https://medine.tech" target="_blank" rel="noopener">Medine.tech</a> — ejemplo de diseño, se personaliza con tu marca y tus datos.</span>
     </div>
   </div>
